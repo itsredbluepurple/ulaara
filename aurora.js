@@ -65,35 +65,35 @@
       );
       float f = fbm(p + 3.5 * r);
 
-      vec3 parchment = vec3(0.945, 0.918, 0.875);
-      vec3 ivory = vec3(0.980, 0.965, 0.933);
-      vec3 champagne = vec3(0.761, 0.682, 0.553);
-      vec3 mushroom = vec3(0.608, 0.569, 0.518);
-      vec3 blush = vec3(0.784, 0.667, 0.635);
+      vec3 parchment = vec3(0.941, 0.906, 0.851);
+      vec3 ivory = vec3(0.992, 0.973, 0.937);
+      vec3 champagne = vec3(0.745, 0.627, 0.455);
+      vec3 mushroom = vec3(0.470, 0.431, 0.388);
+      vec3 blush = vec3(0.710, 0.470, 0.455);
       vec3 oxblood = vec3(0.439, 0.141, 0.169);
 
-      float field = smoothstep(0.28, 0.78, f);
+      float field = smoothstep(0.27, 0.76, f);
       vec3 color = parchment;
-      color = mix(color, ivory, field * 0.62);
-      color = mix(color, champagne, smoothstep(0.50, 1.02, length(q)) * 0.14);
-      color = mix(color, mushroom, smoothstep(0.66, 1.12, r.x + r.y) * 0.065);
+      color = mix(color, ivory, field * 0.70);
+      color = mix(color, champagne, smoothstep(0.46, 1.01, length(q)) * 0.29);
+      color = mix(color, mushroom, smoothstep(0.61, 1.10, r.x + r.y) * 0.14);
 
       float blushField =
         smoothstep(0.72, 0.0, distance(uv, vec2(0.82, 0.22))) *
         smoothstep(0.38, 0.76, f);
-      color = mix(color, blush, blushField * 0.105);
+      color = mix(color, blush, blushField * 0.22);
 
       float oxbloodField =
         smoothstep(0.48, 0.0, distance(uv, vec2(0.88, 0.82))) *
         smoothstep(0.48, 0.78, f);
-      color = mix(color, oxblood, oxbloodField * 0.052);
-      color += ivory * pow(field, 3.0) * 0.038;
+      color = mix(color, oxblood, oxbloodField * 0.135);
+      color += ivory * pow(field, 3.0) * 0.045;
 
       float pointerDistance = distance(uv, uMouse);
       color += ivory * smoothstep(0.30, 0.0, pointerDistance) * 0.045;
       color += champagne * smoothstep(0.13, 0.0, pointerDistance) * 0.020;
 
-      color *= 1.0 - 0.035 * pow(distance(uv, vec2(0.5, 0.46)), 1.7);
+      color *= 1.0 - 0.055 * pow(distance(uv, vec2(0.5, 0.46)), 1.7);
       float grain = hash(gl_FragCoord.xy + fract(uTime) * vec2(91.7, 73.3));
       color += (grain - 0.5) * 0.010;
 

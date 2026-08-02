@@ -25,7 +25,17 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
-main { position: relative; overflow: hidden; }
+.site-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: var(--paper);
+}
+main { position: relative; z-index: 1; overflow: hidden; }
 a { color: inherit; }
 ::selection { color: var(--paper-light); background: var(--oxblood); }
 
@@ -78,18 +88,7 @@ nav a:hover::after { transform: scaleX(1); }
   min-height: 100svh;
   overflow: hidden;
   border-bottom: 1px solid var(--rule);
-  background: rgba(241, 234, 223, 0.7);
-}
-.hero-canvas {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.82;
-  background: var(--paper);
+  background: rgba(241, 234, 223, 0.24);
 }
 .hero-statement {
   position: absolute;
@@ -176,7 +175,7 @@ nav a:hover::after { transform: scaleX(1); }
   animation: rule-in 900ms 100ms ease both;
 }
 
-.work { background: rgba(241, 234, 223, 0.88); }
+.work { background: rgba(241, 234, 223, 0.42); }
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -201,6 +200,9 @@ nav a:hover::after { transform: scaleX(1); }
   min-height: 740px;
   margin: 0 auto;
   border-bottom: 1px solid var(--rule);
+}
+.project:not(.project-ulaara) .project-copy {
+  background: rgba(250, 246, 238, 0.12);
 }
 .project-copy {
   display: flex;
@@ -401,7 +403,7 @@ nav a:hover::after { transform: scaleX(1); }
   min-height: 90vh;
   gap: 9vw;
   padding: 130px 5.55vw;
-  background: rgba(216, 208, 196, 0.86);
+  background: rgba(216, 208, 196, 0.48);
 }
 .profile h2,
 footer h2 {
