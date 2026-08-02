@@ -236,8 +236,7 @@ nav a:hover::after { transform: scaleX(1); }
 .project-link span { margin-left: 8px; }
 
 .rbp-stage,
-.ulaara-stage,
-.poster-grid {
+.ulaara-stage {
   margin: 55px 0 55px 4vw;
 }
 .rbp-stage {
@@ -354,49 +353,6 @@ nav a:hover::after { transform: scaleX(1); }
 }
 .ulaara-seal span { font: 450 70px/1 var(--sans); letter-spacing: -.08em; }
 
-.project-symbols { grid-template-columns: 31% 1fr; }
-.poster-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  min-width: 0;
-  min-height: 630px;
-  gap: 1px;
-  background: rgba(21,19,16,.26);
-}
-.poster { position: relative; display: flex; min-width: 0; overflow: hidden; flex-direction: column; justify-content: space-between; padding: 26px 22px; }
-.poster p,
-.poster small { margin: 0; font: 520 8px/1 var(--mono); letter-spacing: .13em; text-transform: uppercase; }
-.poster strong { font-size: clamp(25px, 3vw, 49px); letter-spacing: -.07em; writing-mode: vertical-rl; transform: rotate(180deg); }
-.poster-serpent { background: var(--paper-deep); }
-.poster-phoenix { color: var(--paper); background: var(--oxblood); }
-.poster-scorpio { color: var(--paper); background: var(--ink); }
-.serpent-ring {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  width: 20vw;
-  min-width: 180px;
-  max-width: 285px;
-  height: 20vw;
-  min-height: 180px;
-  max-height: 285px;
-  border: 18px solid var(--ink);
-  border-radius: 50%;
-  transform: translate(-50%,-50%);
-}
-.serpent-ring::after { content: ""; position: absolute; top: 2px; right: -30px; border-width: 16px 0 16px 36px; border-style: solid; border-color: transparent transparent transparent var(--ink); transform: rotate(-25deg); }
-.serpent-ring span { position: absolute; inset: 22px; border: 1px solid var(--paper-deep); border-radius: 50%; }
-.phoenix-mark { position: absolute; top: 43%; left: 50%; width: 80%; height: 40%; transform: translate(-50%,-50%); }
-.phoenix-mark i { position: absolute; top: 20%; width: 53%; height: 34%; background: var(--paper); }
-.phoenix-mark i:first-child { left: 0; clip-path: polygon(0 0,100% 100%,30% 84%); }
-.phoenix-mark i:nth-child(2) { right: 0; clip-path: polygon(100% 0,70% 84%,0 100%); }
-.phoenix-mark span { position: absolute; top: 22%; left: 42%; width: 16%; height: 60%; background: var(--paper); clip-path: polygon(50% 0,100% 78%,50% 100%,0 78%); }
-.scorpio-orbit { position: absolute; top: 43%; left: 50%; display: grid; width: 20vw; min-width: 180px; max-width: 290px; height: 20vw; min-height: 180px; max-height: 290px; border: 1px solid var(--paper); border-radius: 50%; place-items: center; transform: translate(-50%,-50%); }
-.scorpio-orbit::before,
-.scorpio-orbit::after { content: ""; position: absolute; width: 50%; height: 1px; background: var(--paper); }
-.scorpio-orbit::before { transform: rotate(45deg); }
-.scorpio-orbit::after { transform: rotate(-45deg); }
-
 .profile {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -473,17 +429,13 @@ footer h2 em { color: #c98b91; }
   .hero-rule { top: 16.5%; right: 18px; bottom: 6%; width: 2px; }
   .section-heading,
   .project { width: calc(100% - 36px); }
-  .project,
-  .project-symbols { grid-template-columns: 1fr; }
+  .project { grid-template-columns: 1fr; }
   .project-copy { min-height: 500px; padding: 34px 0; }
   .rbp-stage,
-  .ulaara-stage,
-  .poster-grid { min-height: 610px; margin: 0 0 36px; }
+  .ulaara-stage { min-height: 610px; margin: 0 0 36px; }
   .rbp-browser { width: 94%; }
   .rbp-content { grid-template-columns: 1fr; }
   .scan-panel { margin-top: 30px; }
-  .poster { padding: 20px 12px; }
-  .poster strong { font-size: clamp(21px,7vw,45px); }
   .profile { grid-template-columns: 1fr; padding: 95px 18px; }
   .profile-copy { margin-top: 24px; }
   .profile-columns { grid-template-columns: 1fr; gap: 24px; }
@@ -500,9 +452,6 @@ footer h2 em { color: #c98b91; }
   .hero h1 { font-size: clamp(54px, 15.6vw, 82px); }
   .hero-note { right: 35px; bottom: 12%; width: 62vw; font-size: 15px; }
   .hero-frame { right: 28px; width: 70%; }
-  .poster-grid { grid-template-columns: 1fr; }
-  .poster { min-height: 430px; }
-  .poster strong { writing-mode: initial; transform: none; }
   .ulaara-stage { grid-template-columns: 1fr; }
   .ulaara-light { display: none; }
   .ulaara-seal { top: auto; bottom: 30px; left: 30px; width: 110px; height: 110px; transform: none; }
