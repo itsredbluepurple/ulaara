@@ -1,0 +1,7 @@
+{
+  "name": "ulaara-static-preview",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  }
+}

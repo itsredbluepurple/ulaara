@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ulaara — Colin Ross</title>
 <meta name="description" content="Independent design and creative technology practice by Colin Ross.">
-<meta name="theme-color" content="#ebe7de">
+<meta name="theme-color" content="#f1eadf">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <canvas id="ulaara-aurora" aria-hidden="true"></canvas>
     <main>
       <header class="site-header">
         <a class="wordmark" href="#top" aria-label="Ulaara home">
-          ULAARA<span class="wordmark-dot">•</span>
+          ULAARA
         </a>
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
@@ -24,31 +23,21 @@
       </header>
 
       <section class="hero" id="top">
-        <div class="hero-meta">
-          <p>Colin Ross</p>
-          <p>Independent designer<br />&amp; creative technologist</p>
-          <p>New York / Remote</p>
-        </div>
-
+        <canvas id="ulaara-aurora" class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-statement">
-          <p class="eyebrow">Identity / Interface / Systems</p>
           <h1>
-            Ideas deserve<br />
-            <em>a form of their own.</em>
+            <span>Ideas deserve</span>
+            <span>a form of</span>
+            <span>their own<em>.</em></span>
           </h1>
         </div>
-
-        <div class="hero-orbit" aria-hidden="true">
-          <span class="orbit-word orbit-one">FORM</span>
-          <span class="orbit-word orbit-two">FUNCTION</span>
-          <span class="orbit-word orbit-three">FEELING</span>
-          <span class="orbit-core">U</span>
-        </div>
-
         <p class="hero-note">
-          Ulaara is an independent practice exploring how identity, utility and
-          technology can turn an idea into something unmistakable.
+          Identity, digital products and visual systems shaped around how
+          people notice, remember and act.
         </p>
+        <p class="hero-cue"><span>Selected work</span><span>/</span><span>2026</span></p>
+        <div class="hero-frame" aria-hidden="true"></div>
+        <div class="hero-rule" aria-hidden="true"></div>
       </section>
 
       <section class="work" id="work">
@@ -172,9 +161,8 @@
         </div>
         <div class="profile-copy">
           <p class="profile-lead">
-            I am a designer and builder interested in the point where visual
-            identity becomes behavior—how a brand speaks, moves and helps
-            someone make a decision.
+            I am a designer and builder interested in how brands shape
+            attention, expectation and behavior.
           </p>
           <div class="profile-columns">
             <p>
@@ -183,9 +171,9 @@
               taught me to turn those ideas into functioning digital products.
             </p>
             <p>
-              I bring research, naming, art direction and implementation into
-              one process. The goal is not decoration. It is to discover the
-              form that makes an idea feel inevitable.
+              I study how images, language and systems influence what people
+              notice, remember, trust and act upon. The goal is not decoration,
+              but the form that makes an idea feel inevitable.
             </p>
           </div>
           <div class="capabilities" aria-label="Capabilities">
@@ -211,6 +199,6 @@
         </div>
       </footer>
     </main>
-    <script src="./aurora.js" defer></script>
+    <script type="module" src="./aurora.js"></script>
 </body>
 </html>
