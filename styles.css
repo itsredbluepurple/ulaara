@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --font-geist-sans: Arial, Helvetica, sans-serif;
   --font-geist-mono: "Courier New", Courier, monospace;
@@ -19,6 +17,20 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+#ulaara-aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  background: var(--paper);
+}
+main {
+  position: relative;
+  z-index: 1;
 }
 a { color: inherit; }
 ::selection { background: var(--ink); color: var(--paper); }
@@ -51,9 +63,7 @@ nav a:hover { opacity: .55; }
   grid-template-rows: 1fr auto;
   padding: 150px 36px 34px;
   border-bottom: 1px solid rgba(17,16,15,.25);
-  background:
-    radial-gradient(circle at 76% 52%, rgba(157,108,255,.28), transparent 28%),
-    linear-gradient(110deg, #171513 0 28%, var(--paper) 28% 100%);
+  background: linear-gradient(110deg, rgba(23,21,19,.985) 0 28%, rgba(235,231,222,.12) 28% 100%);
 }
 .hero-meta { color: #f5f1e9; align-self: end; padding-bottom: 120px; }
 .hero-meta p { margin: 0 0 22px; font: 470 10px/1.5 var(--font-geist-mono); text-transform: uppercase; letter-spacing: .1em; }
@@ -88,7 +98,10 @@ h1 em, .profile h2 em, footer h2 em { font-family: Georgia, "Times New Roman", s
 .orbit-one { top: 5%; left: 43%; } .orbit-two { top: 54%; left: -5%; } .orbit-three { top: 52%; right: -5%; }
 @keyframes rotate { to { transform: rotate(360deg); } }
 
-.work { background: var(--paper); }
+.work {
+  background: rgba(235,231,222,.84);
+  backdrop-filter: blur(2px);
+}
 .section-heading { padding: 24px 36px; display: flex; justify-content: space-between; border-bottom: 1px solid rgba(17,16,15,.25); }
 .section-heading p { margin: 0; font: 550 10px/1 var(--font-geist-mono); letter-spacing: .14em; text-transform: uppercase; }
 .project { min-height: 760px; display: grid; grid-template-columns: minmax(310px, 31%) 1fr; border-bottom: 1px solid rgba(17,16,15,.28); }
@@ -144,7 +157,7 @@ h1 em, .profile h2 em, footer h2 em { font-family: Georgia, "Times New Roman", s
 .scorpio-orbit { position: absolute; left: 50%; top: 43%; width: 20vw; height: 20vw; max-width: 290px; max-height: 290px; min-width: 180px; min-height: 180px; transform: translate(-50%,-50%); border: 1px solid var(--ink); border-radius: 50%; display: grid; place-items: center; }
 .scorpio-orbit::before, .scorpio-orbit::after { content: ""; position: absolute; width: 50%; height: 1px; background: var(--ink); }.scorpio-orbit::before { transform: rotate(45deg); }.scorpio-orbit::after { transform: rotate(-45deg); }
 
-.profile { min-height: 90vh; display: grid; grid-template-columns: 1fr 1.15fr; gap: 9vw; padding: 120px 36px; background: #cbc4b8; }
+.profile { min-height: 90vh; display: grid; grid-template-columns: 1fr 1.15fr; gap: 9vw; padding: 120px 36px; background: rgba(203,196,184,.78); backdrop-filter: blur(3px); }
 .profile h2 { font-size: clamp(52px, 7vw, 110px); }
 .profile-copy { align-self: center; }
 .profile-lead { margin: 0 0 70px; max-width: 680px; font-size: clamp(22px, 2.6vw, 40px); line-height: 1.14; letter-spacing: -.04em; }
@@ -163,7 +176,7 @@ footer h2 { max-width: 1100px; }
 
 @media (max-width: 900px) {
   .site-header { padding: 22px 18px; }.site-header nav { gap: 14px; }
-  .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; padding: 120px 18px 28px; background: linear-gradient(180deg,#171513 0 25%,var(--paper) 25%); }
+  .hero { grid-template-columns: 1fr; grid-template-rows: auto auto auto; padding: 120px 18px 28px; background: linear-gradient(180deg,rgba(23,21,19,.985) 0 25%,rgba(235,231,222,.16) 25%); }
   .hero-meta { padding: 0 0 130px; }.hero-meta p { display: inline-block; width: 48%; vertical-align: top; }.hero-meta p:last-child { display: none; }
   .hero-statement { padding: 0; }.hero h1 { font-size: clamp(53px,15vw,90px); }
   .hero-note { grid-column: 1; margin: 90px 0 0; max-width: 65%; }.hero-orbit { right: -65%; bottom: -13%; }
@@ -179,4 +192,3 @@ footer h2 { max-width: 1100px; }
   html { scroll-behavior: auto; }
   .hero-orbit { animation: none; }
 }
-
